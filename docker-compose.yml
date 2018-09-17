@@ -2,8 +2,8 @@ version: '3'
 services:
   worker:
     environment:
-      - APP_ENV=prod
-      - APP_SECRET=TEST
+      - APP_ENV=dev
+      - APP_SECRET=vZkNnb2hxevZkNnb2hxevZkNnb2hxe
     container_name: 'corefiles'
     build:
       context: ./config/docker/dev/

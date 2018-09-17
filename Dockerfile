@@ -82,5 +82,4 @@ RUN cd /var/www/html/ && composer install
 
 EXPOSE 80
 
-#CMD ["supervisord", "-c", "/etc/supervisord.conf"]
 ENTRYPOINT crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
