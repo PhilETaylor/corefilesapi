@@ -45,6 +45,7 @@ RUN apk add --no-cache  \
     unzip               \
     tzdata              \
     nginx               \
+    unzip               \
     procps
 
 RUN update-ca-certificates
@@ -64,13 +65,16 @@ RUN echo 'opcache.max_accelerated_files = 1000000' >> /etc/php/7.3/conf.d/opcach
 
 RUN mkdir -p /run/nginx/
 RUN mkdir -p /var/log/nginx/
-COPY site.conf /etc/nginx/conf.d/site.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY config/docker/prod/site.conf /etc/nginx/conf.d/site.conf
+COPY config/docker/prod/nginx.conf /etc/nginx/nginx.conf
 RUN rm /etc/nginx/conf.d/default.conf
 
 #Supervisor
-COPY supervisord.conf /etc/supervisord.conf
+COPY config/docker/prod/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/log/supervisord/
+
+COPY https://github.com/PhilETaylor/corefilesapi/archive/master.zip /var/www/html
+RUN unzip -o /var/www/html/master.zip /var/www/html/
 
 EXPOSE 80
 
