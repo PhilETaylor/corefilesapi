@@ -73,8 +73,10 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY config/docker/prod/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/log/supervisord/
 
-COPY https://github.com/PhilETaylor/corefilesapi/archive/master.zip /var/www/html
-RUN unzip -o /var/www/html/master.zip /var/www/html/
+COPY . /var/www/html/
+
+#ADD https://github.com/PhilETaylor/corefilesapi/archive/master.zip /var/www/html
+#RUN unzip -o /var/www/html/master.zip /var/www/html/ && rm /var/www/html/master.zip
 
 EXPOSE 80
 

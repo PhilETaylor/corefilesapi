@@ -1,0 +1,1 @@
+docker run -it -e APP_ENV=dev -e APP_SECRET=99cbf4dbcb2fd7caa5939761665d110a -p 80:80 philetaylor/corefilesapi:latest
