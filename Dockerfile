@@ -78,8 +78,6 @@ RUN mkdir -p /var/log/supervisord/
 
 COPY . /var/www/html/
 RUN cd /var/www/html/ && composer install
-#ADD https://github.com/PhilETaylor/corefilesapi/archive/master.zip /var/www/html
-#RUN unzip -o /var/www/html/master.zip /var/www/html/ && rm /var/www/html/master.zip
 
 EXPOSE 80
 

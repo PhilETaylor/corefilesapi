@@ -61,7 +61,7 @@ RUN echo 'memory_limit=1024M' > /etc/php/7.3/conf.d/memory_limit.ini \
 && echo 'realpath_cache_ttl=7200' >> /etc/php/7.3/conf.d/pathcache.ini \
 && echo '[opcache]' > /etc/php/7.3/conf.d/opcache.ini \
 && echo 'opcache.memory_consumption = 512M' >> /etc/php/7.3/conf.d/opcache.ini \
-&& echo 'opcache.max_accelerated_files = 1000000' >> /etc/php/7.3/conf.d/opcache.ini \
+&& echo 'opcache.max_accelerated_files = 1000000' >> /etc/php/7.3/conf.d/opcache.ini
 
 RUN mkdir -p /run/nginx/ && mkdir -p /var/log/nginx/
 COPY site.conf /etc/nginx/conf.d/site.conf

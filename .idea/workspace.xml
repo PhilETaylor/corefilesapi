@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf1247a8-77a8-4064-9498-86a95bdadd26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/dev/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/dev/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/dev/site.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/dev/site.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/prod/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/prod/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/prod/site.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/prod/site.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/docker/dev/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/dev/Dockerfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/docker/dev/site.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -38,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
-              <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+            <state relative-caret-position="1091">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
         </entry>
@@ -103,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/docker/dev/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="945">
+              <caret line="63" column="84" lean-forward="true" selection-start-line="63" selection-start-column="84" selection-end-line="63" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -142,12 +138,12 @@
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/config/docker/prod/crontab" />
-        <option value="$PROJECT_DIR$/config/docker/dev/Dockerfile" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/config/docker/prod/site.conf" />
         <option value="$PROJECT_DIR$/config/docker/prod/nginx.conf" />
         <option value="$PROJECT_DIR$/config/docker/dev/nginx.conf" />
         <option value="$PROJECT_DIR$/config/docker/dev/site.conf" />
+        <option value="$PROJECT_DIR$/config/docker/dev/Dockerfile" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
       </list>
     </option>
   </component>
@@ -507,20 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/docker/dev/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/docker/prod/site.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -546,6 +528,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker/dev/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="84" lean-forward="true" selection-start-line="63" selection-start-column="84" selection-end-line="63" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1091">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
