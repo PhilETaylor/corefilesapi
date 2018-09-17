@@ -1,0 +1,14 @@
+version: "2"
+options:
+  verbose: true
+syncs:
+  corefiles-sync:
+    sync_strategy: 'unison'
+    src: './'
+    sync_excludes: ['*build/docker*','.data','.git','.idea','*var/cache*','*var/log*','*vendor/doctrine/orm/.git']
+    sync_userid: '82'
+    sync_excludes_type: 'Path'
+    watch_args: '-v' # make watching verbose
+    host_disk_mount_mode: 'cached' # see https://docs.docker.com/docker-for-mac/osxfs-caching/#cached
+    sync_host_ip: 'auto'
+    max_attempt: 50

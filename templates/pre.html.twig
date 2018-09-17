@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+{% spaceless %}
+    <pre>
+        <code class="language-{{ lang }}">{{ txt|raw }}</code>
+    </pre>
+{% endspaceless %}
+</body>
+</html>
+
+
+{#if (!$folder && !in_array($lang, ['gif', 'jpg', 'png'])) {#}
+{#echo '<pre>';#}
+            {#}#}

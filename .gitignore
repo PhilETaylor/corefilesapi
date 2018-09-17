@@ -10,3 +10,5 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 .idea
+*.unison.tmp
+*.DS_Store

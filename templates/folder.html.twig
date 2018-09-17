@@ -1,0 +1,12 @@
+
+<h1>Reading from file: {{ file }}</h1>
+{% for url in urls %}
+[
+    <a href="/stat/{{ platform }}/{{ version }}/{{ url }}">stat</a>
+    <a href="/auto/{{ platform }}/{{ version }}/{{ url }}">auto</a>
+    <a href="/raw/{{ platform }}/{{ version }}/{{ url }}">raw</a>
+    <a href="/pre/{{ platform }}/{{ version }}/{{ url }}">pre</a>
+    <a href="/pretty/{{ platform }}/{{ version }}/{{ url }}">pretty</a>
+] - /{{ format }}/{{ platform }}/{{ version }}/{{ url }}<br/>
+
+{% endfor %}

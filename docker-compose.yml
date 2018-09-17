@@ -1,0 +1,16 @@
+version: '3'
+services:
+  worker:
+    container_name: 'corefiles'
+    build:
+      context: ./config/docker/dev/
+      dockerfile: Dockerfile
+    volumes:
+       - corefiles-sync:/var/www/html:nocopy # nocopy is important
+    ports:
+      - 80:80
+volumes:
+  corefiles-sync:
+    external: true
+
+

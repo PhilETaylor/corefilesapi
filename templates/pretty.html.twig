@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/prism.css"/>
+    <script src="/css/prism.js"></script>
+</head>
+<body>
+{% spaceless %}
+    <pre>
+        <code class="language-{{ lang }}">{{ txt|raw }}</code>
+    </pre>
+{% endspaceless %}
+</body>
+</html>

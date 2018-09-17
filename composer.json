@@ -5,13 +5,23 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "~6.0",
+        "league/flysystem": "^1.0",
+        "league/flysystem-ziparchive": "^1.0",
+        "sensio/framework-extra-bundle": "^5.2",
+        "symfony/cache": "*",
         "symfony/console": "*",
+        "symfony/css-selector": "*",
+        "symfony/dom-crawler": "*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
+        "symfony/twig-bundle": "*",
         "symfony/yaml": "*"
     },
     "require-dev": {
         "symfony/dotenv": "*",
+        "symfony/var-dumper": "*",
         "symfony/web-server-bundle": "*"
     },
     "config": {
