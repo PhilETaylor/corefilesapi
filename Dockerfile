@@ -59,6 +59,7 @@ RUN echo 'memory_limit=1024M' > /etc/php/7.3/conf.d/memory_limit.ini \
 && echo 'daemonize = yes' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
 && echo '[www]' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
 && echo 'listen=9000' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
+&& echo 'clear_env=no' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
 && echo 'realpath_cache_size=2048M' > /etc/php/7.3/conf.d/pathcache.ini \
 && echo 'realpath_cache_ttl=7200' >> /etc/php/7.3/conf.d/pathcache.ini \
 && echo '[opcache]' > /etc/php/7.3/conf.d/opcache.ini \
