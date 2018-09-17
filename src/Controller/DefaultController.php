@@ -47,6 +47,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/env")
+     * @return JsonResponse
+     */
+    public function envAction()
+    {
+        echo getenv('APP_ENV');
+        die();
+    }
+
+    /**
      * @Route("/files")
      * @return JsonResponse
      */
