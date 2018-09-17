@@ -26,6 +26,7 @@ RUN apk add --no-cache  \
     php7.3-dom          \
     php7.3-xml          \
     php7.3-simplexml    \
+    php7.3-fileinfo     \
     php7.3-json         \
     php7.3-sodium       \
     php7.3-opcache      \
@@ -50,20 +51,19 @@ RUN apk add --no-cache  \
 RUN update-ca-certificates
 
 # PHP Configuration
-RUN echo 'memory_limit=1024M' > /etc/php/7.3/conf.d/memory_limit.ini
-RUN echo 'output_buffering=Off' > /etc/php/7.3/conf.d/output_buffering.ini
-RUN echo '[global]' > /etc/php/7.3/php-fpm.d/zz-docker.conf
-RUN echo 'daemonize = yes' >> /etc/php/7.3/php-fpm.d/zz-docker.conf
-RUN echo '[www]' >> /etc/php/7.3/php-fpm.d/zz-docker.conf
-RUN echo 'listen=9000' >> /etc/php/7.3/php-fpm.d/zz-docker.conf
-RUN echo 'realpath_cache_size=2048M' > /etc/php/7.3/conf.d/pathcache.ini
-RUN echo 'realpath_cache_ttl=7200' >> /etc/php/7.3/conf.d/pathcache.ini
-RUN echo '[opcache]' > /etc/php/7.3/conf.d/opcache.ini
-RUN echo 'opcache.memory_consumption = 512M' >> /etc/php/7.3/conf.d/opcache.ini
-RUN echo 'opcache.max_accelerated_files = 1000000' >> /etc/php/7.3/conf.d/opcache.ini
+RUN echo 'memory_limit=1024M' > /etc/php/7.3/conf.d/memory_limit.ini \
+&& echo 'output_buffering=Off' > /etc/php/7.3/conf.d/output_buffering.ini \
+&& echo '[global]' > /etc/php/7.3/php-fpm.d/zz-docker.conf \
+&& echo 'daemonize = yes' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
+&& echo '[www]' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
+&& echo 'listen=9000' >> /etc/php/7.3/php-fpm.d/zz-docker.conf \
+&& echo 'realpath_cache_size=2048M' > /etc/php/7.3/conf.d/pathcache.ini \
+&& echo 'realpath_cache_ttl=7200' >> /etc/php/7.3/conf.d/pathcache.ini \
+&& echo '[opcache]' > /etc/php/7.3/conf.d/opcache.ini \
+&& echo 'opcache.memory_consumption = 512M' >> /etc/php/7.3/conf.d/opcache.ini \
+&& echo 'opcache.max_accelerated_files = 1000000' >> /etc/php/7.3/conf.d/opcache.ini \
 
-RUN mkdir -p /run/nginx/
-RUN mkdir -p /var/log/nginx/
+RUN mkdir -p /run/nginx/ && mkdir -p /var/log/nginx/
 COPY site.conf /etc/nginx/conf.d/site.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN rm /etc/nginx/conf.d/default.conf
