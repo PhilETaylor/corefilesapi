@@ -35,6 +35,7 @@ RUN apk add --no-cache  \
     php7.3-common       \
     php7.3-xmlreader    \
     php7.3-xml          \
+    composer            \
     supervisor          \
     git                 \
     openssh             \
@@ -74,7 +75,7 @@ COPY config/docker/prod/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/log/supervisord/
 
 COPY . /var/www/html/
-
+RUN composer install
 #ADD https://github.com/PhilETaylor/corefilesapi/archive/master.zip /var/www/html
 #RUN unzip -o /var/www/html/master.zip /var/www/html/ && rm /var/www/html/master.zip
 
