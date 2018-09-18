@@ -27,6 +27,7 @@ RUN apk add --no-cache  \
     php7.3-opcache      \
     php7.3-shmop        \
     php7.3-zlib         \
+    php7.3-sysvsem      \
     php7.3-xmlwriter    \
     php7.3-common       \
     php7.3-fileinfo     \
@@ -80,13 +81,14 @@ RUN chmod +x /entrypoint.sh
 # Other services
 COPY config/docker/prod/crontab /etc/crontabs/root
 COPY config/docker/prod/supervisord.conf /etc/supervisord.conf
-RUN mkdir -p /var/log/supervisord/
 
 # set up PHP web app correctly
 COPY . /var/www/html/
-RUN cd /var/www/html/ && composer install
-RUN chown -Rf www-data:www-data /var/www/html
-RUN rm -Rf /var/www/html/var/*
+RUN cd /var/www/html/ \
+    && composer install \
+    && chown -Rf www-data:www-data /var/www/html \
+    && rm -Rf /var/www/html/var/* \
+    && mkdir -p /var/log/supervisord/
 
 EXPOSE 80 443
 

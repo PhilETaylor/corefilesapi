@@ -20,6 +20,8 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Lock\Factory;
+use Symfony\Component\Lock\Store\SemaphoreStore;
 
 class JoomlaCommand extends ContainerAwareCommand
 {
@@ -87,10 +89,22 @@ class JoomlaCommand extends ContainerAwareCommand
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return void
+     * @throws ErrorException
      * @throws FileNotFoundException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $store = new SemaphoreStore();
+        $factory = new Factory($store);
+        $lock = $factory->createLock('joomla:download:all');
+
+        if (!$res = $lock->acquire()) {
+            $output->writeln('<error>Could not aquire lock to run \'joomla:download:all\' - maybe another process is still running</error>');
+            return;
+        }else{
+            $output->writeln('<info>Aquired lock!</info>');
+        }
+
         $this->output = $output;
 
         $client = new Client();

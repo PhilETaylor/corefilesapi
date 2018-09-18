@@ -19,6 +19,8 @@ use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\Lock\Factory;
+use Symfony\Component\Lock\Store\SemaphoreStore;
 
 class WordpressCommand extends ContainerAwareCommand
 {
@@ -81,6 +83,18 @@ class WordpressCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
+        $store = new SemaphoreStore();
+        $factory = new Factory($store);
+        $lock = $factory->createLock('wordpress:download:all');
+
+        if (!$res = $lock->acquire()) {
+            $output->writeln('<error>Could not aquire lock to run \'wordpress:download:all\' - maybe another process is still running</error>');
+            return;
+        }else{
+            $output->writeln('<info>Aquired lock!</info>');
+        }
+
         $this->output = $output;
 
         $html = $this->guzzle->get('https://wordpress.org/download/releases/')->getBody()->getContents();

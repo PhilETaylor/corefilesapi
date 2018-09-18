@@ -32,6 +32,7 @@ RUN apk add --no-cache  \
     php7.3-opcache      \
     php7.3-shmop        \
     php7.3-zlib         \
+    php7.3-sysvsem      \
     php7.3-xmlwriter    \
     php7.3-common       \
     php7.3-xmlreader    \

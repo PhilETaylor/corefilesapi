@@ -134,6 +134,9 @@
     "symfony/http-kernel": {
         "version": "v4.1.4"
     },
+    "symfony/lock": {
+        "version": "v4.1.4"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.9.0"
     },

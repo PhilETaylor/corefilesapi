@@ -5,7 +5,7 @@ syncs:
   corefiles-sync:
     sync_strategy: 'unison'
     src: './'
-    sync_excludes: ['*build/docker*','.data','.git','.idea','*var/cache*','*var/log*','*vendor/doctrine/orm/.git']
+    sync_excludes: ['*build/docker*','*public/downloads*','.data','.git','.idea','*var/cache*','*var/log*','*vendor/doctrine/orm/.git']
     sync_userid: '82'
     sync_excludes_type: 'Path'
     watch_args: '-v' # make watching verbose

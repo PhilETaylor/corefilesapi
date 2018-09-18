@@ -17,6 +17,7 @@
         "symfony/dom-crawler": "*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
+        "symfony/lock": "*",
         "symfony/twig-bundle": "*",
         "symfony/yaml": "*"
     },
