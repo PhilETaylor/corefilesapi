@@ -1,19 +1,21 @@
 version: '3'
 services:
   worker:
-    environment:
-      - APP_ENV=dev
-      - APP_SECRET=vZkNnb2hxevZkNnb2hxevZkNnb2hxe
+    env_file:
+      - .env
     container_name: 'corefiles'
     build:
       context: ./config/docker/dev/
       dockerfile: Dockerfile
     volumes:
        - corefiles-sync:/var/www/html:nocopy # nocopy is important
+       - corefiles-downloads:/var/www/html/public/downloads
     ports:
       - 80:80
 volumes:
   corefiles-sync:
     external: true
+  corefiles-downloads:
+    external: false
 
 

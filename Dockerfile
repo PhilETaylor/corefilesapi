@@ -20,8 +20,6 @@ RUN apk add --no-cache  \
     php7.3-iconv        \
     php7.3-intl         \
     php7.3-session      \
-    php7.3-pdo_mysql    \
-    php7.3-mysqli       \
     php7.3-tokenizer    \
     php7.3-dom          \
     php7.3-xml          \
@@ -79,6 +77,7 @@ RUN mkdir -p /var/log/supervisord/
 
 COPY . /var/www/html/
 RUN cd /var/www/html/ && composer install
+RUN chown -Rf nginx:nginx /var/www/html
 
 EXPOSE 80
 

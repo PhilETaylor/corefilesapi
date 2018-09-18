@@ -1,1 +1,17 @@
-docker run -it -e APP_ENV=dev -e APP_SECRET=99cbf4dbcb2fd7caa5939761665d110a -p 80:80 philetaylor/corefilesapi:latest
+
+# Run on production
+
+docker volume create corefiles-downloads
+
+docker run -d --restart=always --env-file=.env-corefiles --mount source=corefiles-downloads,target=/var/www/html/public/downloads -p 88:80 philetaylor/corefilesapi:latest
+
+
+# Run on development (with Docker-Compose)
+
+docker-sync-stack start
+
+
+# Volume
+### dev
+Handled by docker-composer
+### prod
