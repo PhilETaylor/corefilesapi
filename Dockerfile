@@ -38,6 +38,7 @@ RUN apk add --no-cache  \
     supervisor          \
     git                 \
     openssh             \
+    openssl             \
     ca-certificates     \
     curl                \
     wget                \
@@ -79,6 +80,8 @@ COPY . /var/www/html/
 RUN cd /var/www/html/ && composer install
 RUN chown -Rf nginx:nginx /var/www/html
 
+RUN curl https://get.acme.sh | sh
+
 EXPOSE 80
 
-ENTRYPOINT crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
+ENTRYPOINT /root/.acme.sh/acme.sh --install-cert -d ${SSL_DOMAIN} --key-file /sslkey.pem --fullchain-file /sslcert.pem  && crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf

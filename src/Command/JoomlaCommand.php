@@ -124,6 +124,9 @@ class JoomlaCommand extends ContainerAwareCommand
             ];
 
             // Exceptions - doh!
+            if ($release->version === '3.1.3' || $release->version === '3.1.2' ) {
+                continue;
+            }
             if ($release->version === '3.7.5') {
                 $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-5/Joomla_3-7.5-Stable-Full_Package.zip?format=zip';
             }
