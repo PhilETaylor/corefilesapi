@@ -124,7 +124,10 @@ class JoomlaCommand extends ContainerAwareCommand
             ];
 
             // Exceptions - doh!
-            if ($release->version === '3.1.3' || $release->version === '3.1.2' ) {
+            if ($release->version === '3.1.3'
+                || $release->version === '3.1.2'
+                || $release->version === '2.5.12'
+            ) {
                 continue;
             }
             if ($release->version === '3.7.5') {
