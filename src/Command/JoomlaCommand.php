@@ -11,6 +11,7 @@
 
 namespace App\Command;
 
+use ErrorException;
 use GuzzleHttp\Client;
 use League\Flysystem\FileNotFoundException;
 use League\Flysystem\Filesystem;
@@ -19,7 +20,6 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DomCrawler\Crawler;
 
 class JoomlaCommand extends ContainerAwareCommand
 {
@@ -153,11 +153,19 @@ class JoomlaCommand extends ContainerAwareCommand
                 $this->output->writeln('<info>Im going to download file ' . $urls['downloadUrl'] . '</info>');
 
                 try {
-                    file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
+
+                    $data = file_get_contents($urls['downloadUrl']);
+
+                    if (!$data) {
+                        throw new ErrorException();
+                    }
+
+                    file_put_contents($urls['localfile'], $data);
+
                     chown($urls['localfile'], 'www-data');
                     chgrp($urls['localfile'], 'www-data');
-                    sleep(3);
-                } catch (\ErrorException $exception) {
+
+                } catch (ErrorException $exception) {
                     $urls['downloadUrl'] = str_replace(
                         [
                             'Joomla',
@@ -173,10 +181,13 @@ class JoomlaCommand extends ContainerAwareCommand
                         ],
                         $urls['downloadUrl']);
 
-                    file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
+                    $data = file_get_contents($urls['downloadUrl']);
+                    if (!$data) {
+                        throw new ErrorException();
+                    }
+                    file_put_contents($urls['localfile'], $data);
                     chown($urls['localfile'], 'www-data');
                     chgrp($urls['localfile'], 'www-data');
-                    sleep(3);
 
                 }
 
@@ -208,7 +219,6 @@ class JoomlaCommand extends ContainerAwareCommand
 
                 chown($urls['hashfile'], 'www-data');
                 chgrp($urls['hashfile'], 'www-data');
-                sleep(3);
 
                 $this->output->writeln('');
                 $this->output->writeln('<info>Saved md5s to file ' . $urls['hashfile'] . '</info>');

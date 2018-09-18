@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d368ed85-59e5-40bf-a2ca-37153903a56d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/prod/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/prod/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/docker/prod/sitessl.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/docker/prod/sitessl.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/WordpressCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/WordpressCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +32,7 @@
           <entry key="gitignore" value="7" />
           <entry key="json" value="4" />
           <entry key="md" value="305" />
-          <entry key="php" value="1560" />
+          <entry key="php" value="1690" />
           <entry key="prod" value="12" />
           <entry key="sh" value="373" />
           <entry key="twig" value="1119" />
@@ -50,7 +45,7 @@
           <entry key="Dockerfile" value="477" />
           <entry key="JSON" value="4" />
           <entry key="Markdown" value="305" />
-          <entry key="PHP" value="1560" />
+          <entry key="PHP" value="1690" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="SmartyConfig" value="114" />
           <entry key="Twig" value="1119" />
@@ -110,7 +105,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -183,20 +178,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+            <state relative-caret-position="563">
+              <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
               <folding>
-                <element signature="e#335#357#0#PHP" expanded="true" />
+                <element signature="e#335#354#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Command/WordpressCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2400">
-              <caret line="174" column="21" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
+            <state relative-caret-position="1178">
+              <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+              <folding>
+                <element signature="e#335#357#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,9 +205,10 @@
     <findStrings>
       <find>mysql</find>
       <find>Strict-Transport-Security</find>
-      <find>entrypoint</find>
       <find>file_put_contents</find>
       <find>file_pu</find>
+      <find>entrypoint</find>
+      <find>sleep</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -234,9 +233,9 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/config/docker/prod/entrypoint.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Command/JoomlaCommand.php" />
         <option value="$PROJECT_DIR$/src/Command/WordpressCommand.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -547,23 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
-          <folding>
-            <element signature="e#335#357#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/WordpressCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="174" column="21" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -573,6 +555,26 @@
             <element signature="e#1349#1365#1#PHP" expanded="true" />
             <element signature="e#1894#1908#1#PHP" expanded="true" />
             <element signature="e#2128#2142#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
+          <folding>
+            <element signature="e#335#354#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/WordpressCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+          <folding>
+            <element signature="e#335#357#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

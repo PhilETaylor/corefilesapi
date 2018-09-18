@@ -117,10 +117,11 @@ class WordpressCommand extends ContainerAwareCommand
      */
     private function generateLocalName(string $downloadLink)
     {
-        $downloadLink = str_replace([
-            '.zip',
-            'https://wordpress.org/wordpress-',
-        ],
+        $downloadLink = str_replace(
+            [
+                '.zip',
+                'https://wordpress.org/wordpress-',
+            ],
             '',
             $downloadLink);
 
@@ -132,10 +133,26 @@ class WordpressCommand extends ContainerAwareCommand
     private function doHash(string $hashFile, string $downloadLink)
     {
         $localZip = $this->generateFileName($downloadLink);
-        file_put_contents($localZip, file_get_contents($downloadLink));
+        $data = file_get_contents($downloadLink);
+
+        // ok glitch?
+        if (!$data) {
+            $data = file_get_contents($downloadLink);
+        }
+
+        // ffs
+        if (!$data) {
+            $data = file_get_contents($downloadLink);
+        }
+
+        if (!$data) {
+            return;
+        }
+
+        file_put_contents($localZip, $data);
+
         chown($localZip, 'www-data');
         chgrp($localZip, 'www-data');
-        sleep(3);
 
         $this->output->writeln('__');
         $this->output->writeln('<info>Im going to generate md5 hashes based on file ' . $localZip . '</info>');
@@ -167,7 +184,6 @@ class WordpressCommand extends ContainerAwareCommand
         file_put_contents($hashFile, $str);
         chown($hashFile, 'www-data');
         chgrp($hashFile, 'www-data');
-        sleep(3);
     }
 
     /**
@@ -182,7 +198,7 @@ class WordpressCommand extends ContainerAwareCommand
             '',
             $downloadLink);
 
-         $root = realpath(__DIR__ . '/../../');
+        $root = realpath(__DIR__ . '/../../');
 
         return $root . '/public/downloads/Wordpress/Releases/' . $downloadLink;
     }
