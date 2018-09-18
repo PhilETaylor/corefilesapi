@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d368ed85-59e5-40bf-a2ca-37153903a56d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/downloads/Joomla/Hashes/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/downloads/Joomla/Releases/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/downloads/Wordpress/Hashes/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/downloads/Wordpress/Releases/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +28,7 @@
           <entry key="Dockerfile" value="40" />
           <entry key="gitignore" value="7" />
           <entry key="md" value="241" />
-          <entry key="php" value="728" />
+          <entry key="php" value="889" />
           <entry key="prod" value="12" />
           <entry key="yml" value="47" />
         </counts>
@@ -46,7 +37,7 @@
         <counts>
           <entry key="Dockerfile" value="40" />
           <entry key="Markdown" value="241" />
-          <entry key="PHP" value="728" />
+          <entry key="PHP" value="889" />
           <entry key="PLAIN_TEXT" value="19" />
           <entry key="YAML" value="47" />
         </counts>
@@ -123,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="833">
+              <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
               <folding>
                 <element signature="e#335#357#0#PHP" expanded="true" />
               </folding>
@@ -404,8 +395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="833">
+          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
           <folding>
             <element signature="e#335#357#0#PHP" expanded="true" />
           </folding>

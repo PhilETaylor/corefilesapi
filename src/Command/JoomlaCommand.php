@@ -99,6 +99,10 @@ class JoomlaCommand extends ContainerAwareCommand
 
         foreach ($json->releases as $release) {
 
+            if (in_array($release->branch, ['Install from Web', 'Weblinks'])) {
+                continue;
+            }
+
             $url = 'https://downloads.joomla.org/cms/%s/%s/Joomla_%s-Stable-Full_Package.zip?format=zip';
 
             $series = strtolower(str_replace(['! ', '.'], '', $release->branch));
@@ -119,13 +123,23 @@ class JoomlaCommand extends ContainerAwareCommand
                 'hashfile' => $this->root . '/public/downloads/Joomla/Hashes/' . $release->version . '.txt'
             ];
 
+            // Exceptions - doh!
+            if ($release->version === '3.7.5') {
+                $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-5/Joomla_3-7.5-Stable-Full_Package.zip?format=zip';
+            }
+            if ($release->version === '3.7.4') {
+                $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-4/Joomla_3-7.4-Stable-Full_Package.zip?format=zip';
+            }
+            if ($release->version === '3.7.3') {
+                $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-3/Joomla_3.7.3-Stable-Full_Package.zip?format=zip';
+            }
+
             if (!file_exists($urls['hashfile'])) {
                 $this->output->writeln('<info>Im going to download file ' . $urls['downloadUrl'] . '</info>');
 
                 try {
                     file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
                 } catch (\ErrorException $exception) {
-
                     $urls['downloadUrl'] = str_replace(
                         [
                             'Joomla',
@@ -142,6 +156,7 @@ class JoomlaCommand extends ContainerAwareCommand
                         $urls['downloadUrl']);
 
                     file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
+
                 }
 
                 $this->output->writeln('<info>Im going to generate md5 hashes based on file ' . $urls['localfile'] . '</info>');
