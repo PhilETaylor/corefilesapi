@@ -84,4 +84,4 @@ RUN curl https://get.acme.sh | sh
 
 EXPOSE 80
 
-ENTRYPOINT /root/.acme.sh/acme.sh --install-cert -d ${SSL_DOMAIN} --key-file /sslkey.pem --fullchain-file /sslcert.pem  && crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
+ENTRYPOINT /root/.acme.sh/acme.sh --install-cert -d ${SSL_DOMAIN} --key-file /sslkey.pem --fullchain-file /sslcert.pem --reloadcmd "kill nginx && nginx"  && crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
