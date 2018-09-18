@@ -127,6 +127,12 @@ class JoomlaCommand extends ContainerAwareCommand
             if ($release->version === '3.1.3'
                 || $release->version === '3.1.2'
                 || $release->version === '2.5.12'
+                || $release->version === '1.0.5'
+                || $release->version === '1.0.4'
+                || $release->version === '1.0.3'
+                || $release->version === '1.0.2'
+                || $release->version === '1.0.1'
+                || $release->version === '1.0.0'
             ) {
                 continue;
             }
@@ -138,6 +144,9 @@ class JoomlaCommand extends ContainerAwareCommand
             }
             if ($release->version === '3.7.3') {
                 $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-3/Joomla_3.7.3-Stable-Full_Package.zip?format=zip';
+            }
+            if ($release->version === '1.5.0') {
+                $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla15/1-5-0/joomla-1-5-0-zip?format=zip';
             }
 
             if (!file_exists($urls['hashfile'])) {

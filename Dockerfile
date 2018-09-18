@@ -1,12 +1,10 @@
-FROM alpine:3.8
+FROM alpine:latest
 
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
 
 RUN echo "https://repos.php.earth/alpine/v3.8" >> /etc/apk/repositories
 
 RUN apk update
-
-# PHP
 
 RUN apk add --no-cache  \
     php7.3              \
@@ -46,6 +44,7 @@ RUN apk add --no-cache  \
     unzip               \
     tzdata              \
     nginx               \
+    nano                \
     unzip               \
     procps
 
@@ -67,22 +66,30 @@ RUN echo 'memory_limit=1024M' > /etc/php/7.3/conf.d/memory_limit.ini \
 
 RUN mkdir -p /run/nginx/
 RUN mkdir -p /var/log/nginx/
-COPY config/docker/prod/site.conf /etc/nginx/conf.d/site.conf
+
+# placeholder nginx configurations
+COPY config/docker/prod/site.conf /site.conf
+COPY config/docker/prod/sitessl.conf /sitessl.conf
 COPY config/docker/prod/nginx.conf /etc/nginx/nginx.conf
 RUN rm /etc/nginx/conf.d/default.conf
 
-#Supervisor
+# entrypoint configurations
+COPY config/docker/prod/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Other services
 COPY config/docker/prod/crontab /etc/crontabs/root
 COPY config/docker/prod/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/log/supervisord/
 
+# set up PHP web app correctly
 COPY . /var/www/html/
 RUN cd /var/www/html/ && composer install
 RUN chown -Rf nginx:nginx /var/www/html
+RUN rm -Rf /var/www/html/var/*
 
 RUN curl https://get.acme.sh | sh
 
-EXPOSE 80
+EXPOSE 80 443
 
-ENTRYPOINT crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
-#ENTRYPOINT /root/.acme.sh/acme.sh --install-cert -d ${SSL_DOMAIN} --key-file /sslkey.pem --fullchain-file /sslcert.pem --reloadcmd "kill nginx && nginx"  && crond -L /var/log/cron.log && supervisord -c /etc/supervisord.conf
+ENTRYPOINT /entrypoint.sh
