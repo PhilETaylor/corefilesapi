@@ -136,6 +136,10 @@ class JoomlaCommand extends ContainerAwareCommand
             ) {
                 continue;
             }
+
+            if ($release->version === '3.8.1') {
+                $urls['downloadUrl'] = 'https://downloads.joomla.org/extensions/joomla3/3-8-1/joomla_3-8-1-stable-full_package-zip?format=zip';
+            }
             if ($release->version === '3.7.5') {
                 $urls['downloadUrl'] = 'https://downloads.joomla.org/cms/joomla3/3-7-5/Joomla_3-7.5-Stable-Full_Package.zip?format=zip';
             }

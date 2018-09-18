@@ -13,3 +13,4 @@
 .idea
 *.unison.tmp
 *.DS_Store
+/public/downloads
