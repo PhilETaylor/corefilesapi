@@ -181,6 +181,8 @@ class JoomlaCommand extends ContainerAwareCommand
                         ],
                         $urls['downloadUrl']);
 
+                    $this->output->writeln('<info>Grrr.... Im going to try from another url: ' . $urls['downloadUrl'] . '</info>');
+
                     $data = file_get_contents($urls['downloadUrl']);
                     if (!$data) {
                         throw new ErrorException();

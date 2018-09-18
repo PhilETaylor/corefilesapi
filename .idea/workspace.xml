@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d368ed85-59e5-40bf-a2ca-37153903a56d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/JoomlaCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/WordpressCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/WordpressCommand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +31,7 @@
           <entry key="gitignore" value="7" />
           <entry key="json" value="4" />
           <entry key="md" value="305" />
-          <entry key="php" value="1690" />
+          <entry key="php" value="1722" />
           <entry key="prod" value="12" />
           <entry key="sh" value="373" />
           <entry key="twig" value="1119" />
@@ -45,7 +44,7 @@
           <entry key="Dockerfile" value="477" />
           <entry key="JSON" value="4" />
           <entry key="Markdown" value="305" />
-          <entry key="PHP" value="1690" />
+          <entry key="PHP" value="1722" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="SmartyConfig" value="114" />
           <entry key="Twig" value="1119" />
@@ -178,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
+            <state relative-caret-position="878">
+              <caret line="188" column="8" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="8" />
               <folding>
                 <element signature="e#335#354#0#PHP" expanded="true" />
               </folding>
@@ -190,7 +189,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Command/WordpressCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
+            <state relative-caret-position="1186">
               <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
               <folding>
                 <element signature="e#335#357#0#PHP" expanded="true" />
@@ -234,8 +233,8 @@
         <option value="$PROJECT_DIR$/config/docker/prod/entrypoint.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Command/JoomlaCommand.php" />
         <option value="$PROJECT_DIR$/src/Command/WordpressCommand.php" />
+        <option value="$PROJECT_DIR$/src/Command/JoomlaCommand.php" />
       </list>
     </option>
   </component>
@@ -561,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
+        <state relative-caret-position="878">
+          <caret line="188" column="8" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="8" />
           <folding>
             <element signature="e#335#354#0#PHP" expanded="true" />
           </folding>
@@ -571,7 +570,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/WordpressCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
+        <state relative-caret-position="1186">
           <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
           <folding>
             <element signature="e#335#357#0#PHP" expanded="true" />
