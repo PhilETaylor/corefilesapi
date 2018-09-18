@@ -1,6 +1,9 @@
-if [ ! -f /ssl/sslcert.pem ]; then
+# Install https://github.com/Neilpang/acme.sh
+if [ ! -f /root/.acme.sh/acme.sh ]; then
+     curl https://get.acme.sh | sh
+fi
 
-    curl https://get.acme.sh | sh
+if [ ! -f /ssl/sslcert.pem ]; then
 
     # Set the domain from the env
     sed "s/REPLACE;/$SSL_DOMAIN;/" /site.conf > /etc/nginx/conf.d/$SSL_DOMAIN.conf

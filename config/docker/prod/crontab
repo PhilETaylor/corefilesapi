@@ -5,3 +5,7 @@
 * * * * * cd /var/www/html/ && php bin/console joomla:download:all  > /var/log/joomla-cron.log 2>&1
 
 * * * * * chown -Rf www-data:www-data /var/www/html/var > /dev/null 2>&1
+
+13 3 * * * /root/.acme.sh/acme.sh --renew-all > /dev/null 2>&1
+
+
