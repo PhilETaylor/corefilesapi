@@ -43,17 +43,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return new JsonResponse([]);
-    }
-
-    /**
-     * @Route("/env")
-     * @return JsonResponse
-     */
-    public function envAction()
-    {
-        echo getenv('APP_ENV');
-        die();
+        return $this->render('home.html.twig');
     }
 
     /**
