@@ -23,7 +23,7 @@ use Symfony\Component\DomCrawler\Crawler;
 class WordpressCommand extends ContainerAwareCommand
 {
     /**
-     * @var Guzzle
+     * @var Client
      */
     private $guzzle;
 
@@ -36,8 +36,7 @@ class WordpressCommand extends ContainerAwareCommand
      * CorefilesCommand constructor.
      *
      * @param null|string $name
-     * @param Guzzle $guzzle
-     * @param Crawler $crawler
+     * @param Client $guzzle
      */
     public function __construct(?string $name = null, Client $guzzle)
     {
@@ -68,7 +67,7 @@ class WordpressCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('wp:download:all')
+            ->setName('wordpress:download:all')
             ->setDescription('Download and hash all wordpress versions')
             ->setHelp('');
     }
@@ -112,6 +111,10 @@ class WordpressCommand extends ContainerAwareCommand
         }
     }
 
+    /**
+     * @param string $downloadLink
+     * @return string
+     */
     private function generateLocalName(string $downloadLink)
     {
         $downloadLink = str_replace([
@@ -130,6 +133,9 @@ class WordpressCommand extends ContainerAwareCommand
     {
         $localZip = $this->generateFileName($downloadLink);
         file_put_contents($localZip, file_get_contents($downloadLink));
+        chown($localZip, 'www-data');
+        chgrp($localZip, 'www-data');
+        sleep(3);
 
         $this->output->writeln('__');
         $this->output->writeln('<info>Im going to generate md5 hashes based on file ' . $localZip . '</info>');
@@ -159,8 +165,15 @@ class WordpressCommand extends ContainerAwareCommand
         $progress->finish();
 
         file_put_contents($hashFile, $str);
+        chown($hashFile, 'www-data');
+        chgrp($hashFile, 'www-data');
+        sleep(3);
     }
 
+    /**
+     * @param string $downloadLink
+     * @return string
+     */
     private function generateFileName(string $downloadLink)
     {
         $downloadLink = str_replace([

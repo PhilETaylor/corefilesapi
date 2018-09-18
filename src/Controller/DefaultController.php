@@ -16,6 +16,10 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Routing\Annotation\Route;
 use ZipArchive;
 
+/**
+ * Class DefaultController
+ * @package App\Controller
+ */
 class DefaultController extends Controller
 {
 
@@ -57,29 +61,30 @@ class DefaultController extends Controller
      *
      * @return RedirectResponse|Response
      */
-    public function hashesAction($platform, $version, $format ='gz')
+    public function hashesAction($platform, $version, $format = 'gz')
     {
-        if (preg_match('/\.\./', $platform)||preg_match('/\.\./', $version)){
+        if (preg_match('/\.\./', $platform) || preg_match('/\.\./', $version)) {
             return $this->redirectToRoute('app_homepage');
         }
 
-        $hashFile = realpath(sprintf('./downloads/%s/Hashes/', ucwords(strtolower($platform)))) . '/' . $version.'.txt';
+        $hashFile = realpath(sprintf('./downloads/%s/Hashes/', ucwords(strtolower($platform)))) . '/' . $version . '.txt';
 
 
-        if (!file_exists($hashFile)){
+        if (!file_exists($hashFile)) {
             return $this->redirectToRoute('app_homepage');
         }
 
-        if ($format=='gz') {
+        if ($format == 'gz') {
             return new Response(gzdeflate(file_get_contents($hashFile)), 200, [
-                'Content-Type'=>"application/x-gzip"
+                'Content-Type' => "application/x-gzip"
             ]);
         } else {
             return new Response(file_get_contents($hashFile), 200, [
-                'Content-Type'=>"text/plain"
+                'Content-Type' => "text/plain"
             ]);
         }
     }
+
     /**
      * @Route("/files")
      * @return JsonResponse
@@ -107,7 +112,7 @@ class DefaultController extends Controller
     {
         $cache = new FilesystemCache();
 
-        if (count($_GET)){
+        if (count($_GET)) {
             $cache->clear();
         }
 
@@ -197,12 +202,10 @@ class DefaultController extends Controller
                         break;
                     case 'svg':
                         $this->type = self::IMAGE;
-//                        header('Content-Type: image/jpeg');
                         break;
                 }
             }
         }
-
 
         if (!file_exists($zipFile)) throw new Exception('Invalid Version To File Mapping: ');
 
@@ -294,20 +297,20 @@ class DefaultController extends Controller
                 break;
         }
 
-
         if ('pretty' === $format && $lang == 'js') {
             $lang = 'javascript';
         }
 
-        return $this->render($template, [
-            'file' => $fileToRead,
-            'version' => $version,
-            'format' => $format,
-            'platform' => $platform ?? '',
-            'txt' => $txt ?? '',
-            'hash' => $hash ?? '',
-            'lang' => $lang ?? '',
-            'urls' => $urls ?? [],
-        ]);
+        return $this->render($template,
+            [
+                'file' => $fileToRead,
+                'version' => $version,
+                'format' => $format,
+                'platform' => $platform ?? '',
+                'txt' => $txt ?? '',
+                'hash' => $hash ?? '',
+                'lang' => $lang ?? '',
+                'urls' => $urls ?? [],
+            ]);
     }
 }

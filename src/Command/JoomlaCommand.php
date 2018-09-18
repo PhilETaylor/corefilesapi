@@ -12,6 +12,7 @@
 namespace App\Command;
 
 use GuzzleHttp\Client;
+use League\Flysystem\FileNotFoundException;
 use League\Flysystem\Filesystem;
 use League\Flysystem\ZipArchive\ZipArchiveAdapter;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -24,7 +25,7 @@ class JoomlaCommand extends ContainerAwareCommand
 {
 
     /**
-     * @var Guzzle
+     * @var Client
      */
     private $guzzle;
 
@@ -42,8 +43,7 @@ class JoomlaCommand extends ContainerAwareCommand
      * CorefilesCommand constructor.
      *
      * @param null|string $name
-     * @param Guzzle $guzzle
-     * @param Crawler $crawler
+     * @param Client $guzzle
      */
     public function __construct(?string $name = null, Client $guzzle)
     {
@@ -86,8 +86,8 @@ class JoomlaCommand extends ContainerAwareCommand
      *
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return JoomlaCommand
-     * @throws \League\Flysystem\FileNotFoundException
+     * @return void
+     * @throws FileNotFoundException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -154,6 +154,9 @@ class JoomlaCommand extends ContainerAwareCommand
 
                 try {
                     file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
+                    chown($urls['localfile'], 'www-data');
+                    chgrp($urls['localfile'], 'www-data');
+                    sleep(3);
                 } catch (\ErrorException $exception) {
                     $urls['downloadUrl'] = str_replace(
                         [
@@ -171,11 +174,13 @@ class JoomlaCommand extends ContainerAwareCommand
                         $urls['downloadUrl']);
 
                     file_put_contents($urls['localfile'], file_get_contents($urls['downloadUrl']));
+                    chown($urls['localfile'], 'www-data');
+                    chgrp($urls['localfile'], 'www-data');
+                    sleep(3);
 
                 }
 
                 $this->output->writeln('<info>Im going to generate md5 hashes based on file ' . $urls['localfile'] . '</info>');
-
 
                 $filesystem = new Filesystem(new ZipArchiveAdapter($urls['localfile']));
                 $contents = $filesystem->listContents('.', true);
@@ -200,10 +205,13 @@ class JoomlaCommand extends ContainerAwareCommand
                 $progress->finish();
 
                 file_put_contents($urls['hashfile'], $str);
+
+                chown($urls['hashfile'], 'www-data');
+                chgrp($urls['hashfile'], 'www-data');
+                sleep(3);
+
                 $this->output->writeln('');
                 $this->output->writeln('<info>Saved md5s to file ' . $urls['hashfile'] . '</info>');
-
-
             }
         }
     }

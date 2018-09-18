@@ -85,10 +85,8 @@ RUN mkdir -p /var/log/supervisord/
 # set up PHP web app correctly
 COPY . /var/www/html/
 RUN cd /var/www/html/ && composer install
-RUN chown -Rf nginx:nginx /var/www/html
+RUN chown -Rf www-data:www-data /var/www/html
 RUN rm -Rf /var/www/html/var/*
-
-RUN curl https://get.acme.sh | sh
 
 EXPOSE 80 443
 
