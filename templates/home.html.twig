@@ -34,11 +34,6 @@
 
     <title>Complete Historical Joomla/Wordpress Core Files</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1512242213">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1512242213">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1512242213">
-    <link rel="manifest" href="/manifest.json?v=1512242213">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1512242213" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
     <meta charset="utf-8">
@@ -58,7 +53,8 @@
 <body>
 <main role="main" class="container">
     <h1 class="mt-5 mb-5 text-center">Complete Historical Joomla/Wordpress Core Files</h1>
-    <div class="mt-5 mb-5 text-center alert alert-primary" role="alert"><strong>This is not an official Joomla or Wordpress resource, but it
+    <div class="mt-5 mb-5 text-center alert alert-primary" role="alert"><strong>This is not an official Joomla or
+            Wordpress resource, but it
             is a well respected, community resource provided by Phil Taylor of myJoomla.com</strong></div>
     <p class="lead">This FREE service contains a COMPLETE resource of every Joomla & Wordpress stable release ever, each
         file's contents are available from a direct url.</p>
@@ -67,6 +63,12 @@
 
 
     <p>The basic format is /{format}/{platform}/{version}/{file_or_folder_path}</p>
+    <pre>
+         - Format:  raw, pretty, auto, stat, pre
+         - Platform:  joomla, wordpress
+         - Version:  SEMVER version E.g 3.8.12
+         - file_or_folder_path:  E.g  administrator/index.php or index.php
+    </pre>
 
 
     </p>
@@ -79,24 +81,35 @@
         <li><a href="/raw/joomla/3.4.8/administrator/index.php">Raw, Joomla 3.4.8 /administrator/index.php</a></li>
         <li><a href="/pre/joomla/3.4.8/administrator/index.php">Pre, Joomla 3.4.8 /administrator/index.php</a></li>
         <li><a href="/stat/joomla/3.4.8/administrator/index.php">Stats, Joomla 3.4.8 /administrator/index.php</a></li>
-        <li>----</li>
+        <li style="list-style: none">----</li>
         <li><a href="/pretty/wordpress/3.9.1/wp-admin/index.php">Pretty, Wordpress 3.9.1 /wp-admin/index.php</a></li>
         <li><a href="/raw/wordpress/3.9.1/wp-admin/index.php">Raw, Wordpress 3.9.1 /wp-admin/index.php</a></li>
         <li><a href="/pre/wordpress/3.9.1/wp-admin/index.php">Pre, Wordpress 3.9.1 /wp-admin/index.php</a></li>
         <li><a href="/stat/wordpress/3.9.1/wp-admin/index.php">Stats, Wordpress 3.9.1 /wp-admin/index.php</a></li>
-
-        <li>----</li>
+        <li style="list-style: none">----</li>
+        <li><a href="/hashes/joomla/3.8.12">Hashes, gzipped, Joomla 3.8.12</a></li>
+        <li><a href="/hashes/joomla/3.8.12/plain">Hashes, plain, Joomla 3.8.12</a></li>
+        <li><a href="/hashes/wordpress/3.9.1">Hashes, gzipped, Wordpress 3.9.1</a></li>
+        <li><a href="/hashes/wordpress/3.9.1/plain">Hashes, plain, Wordpress 3.9.1</a></li>
+        <li style="list-style: none">----</li>
         <li>
             <a href="/folder/joomla/1.6.0/components/com_contact/">List a folder and all below it</a>
         </li>
     </ul>
-
     </p>
+
+    <hr/>
+    <h4>Roll your own service like this!</h4>
+    <p>Coming soon this service will be available as a Docker instance. </p>
+    <hr/>
+    <h4>Contribute to project or Donate!</h4>
+    <p>Contributions and PayPal payments to phil@phil-taylor.com please</p>
 
 </main>
 <footer class="footer">
     <div class="container">
-        <span class="text-muted">&copy <a href="https://www.phil-taylor.com/">Blue Flame Digital Solutions</a> / <a href="https://myJoomla.com ">myJoomla.com</a>  </span>
+        <span class="text-muted">&copy <a href="https://www.phil-taylor.com/">Blue Flame Digital Solutions</a> / <a
+                    href="https://myJoomla.com ">myJoomla.com</a>  </span>
     </div>
 </footer>
 <script>!function (d, s, id) {
@@ -108,11 +121,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }
     }(document, 'script', 'twitter-wjs');
-
-
-    var __lc = {};
-    __lc.license = 5560341;
-
+    window.__lc = window.__lc || {};
+    window.__lc.license = 5560341;
     (function () {
         var lc = document.createElement('script');
         lc.type = 'text/javascript';
@@ -122,6 +132,8 @@
         s.parentNode.insertBefore(lc, s);
     })();
 </script>
+<!-- End of LiveChat code -->
+
 <style>
     /* Sticky footer styles
 -------------------------------------------------- */

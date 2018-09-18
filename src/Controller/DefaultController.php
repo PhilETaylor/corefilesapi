@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Cache\Simple\FilesystemCache;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -37,8 +38,8 @@ class DefaultController extends Controller
     private $type;
 
     /**
-     * @Route("/")
-     * @return JsonResponse
+     * @Route("/", name="app_homepage")
+     * @return Response
      * @throws Exception
      */
     public function indexAction()
@@ -46,6 +47,39 @@ class DefaultController extends Controller
         return $this->render('home.html.twig');
     }
 
+    /**
+     * @Route("/hashes/{platform}/{version}/{format}", requirements={"platform"="wordpress|joomla"}, defaults={"format"="gz"})
+     * @Cache(expires="+1 Year", public=true)
+     *
+     * @param $platform
+     * @param $version
+     * @param string $format
+     *
+     * @return RedirectResponse|Response
+     */
+    public function hashesAction($platform, $version, $format ='gz')
+    {
+        if (preg_match('/\.\./', $platform)||preg_match('/\.\./', $version)){
+            return $this->redirectToRoute('app_homepage');
+        }
+
+        $hashFile = realpath(sprintf('./downloads/%s/Hashes/', ucwords(strtolower($platform)))) . '/' . $version.'.txt';
+
+
+        if (!file_exists($hashFile)){
+            return $this->redirectToRoute('app_homepage');
+        }
+
+        if ($format=='gz') {
+            return new Response(gzdeflate(file_get_contents($hashFile)), 200, [
+                'Content-Type'=>"application/x-gzip"
+            ]);
+        } else {
+            return new Response(file_get_contents($hashFile), 200, [
+                'Content-Type'=>"text/plain"
+            ]);
+        }
+    }
     /**
      * @Route("/files")
      * @return JsonResponse

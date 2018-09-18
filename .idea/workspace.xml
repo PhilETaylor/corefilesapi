@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d368ed85-59e5-40bf-a2ca-37153903a56d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +31,12 @@
           <entry key="conf" value="114" />
           <entry key="crontab" value="2" />
           <entry key="gitignore" value="7" />
+          <entry key="json" value="4" />
           <entry key="md" value="295" />
-          <entry key="php" value="962" />
+          <entry key="php" value="1493" />
           <entry key="prod" value="12" />
           <entry key="sh" value="343" />
-          <entry key="twig" value="626" />
+          <entry key="twig" value="1119" />
           <entry key="yml" value="47" />
         </counts>
       </usages-collector>
@@ -43,11 +44,12 @@
         <counts>
           <entry key="Bash" value="343" />
           <entry key="Dockerfile" value="474" />
+          <entry key="JSON" value="4" />
           <entry key="Markdown" value="295" />
-          <entry key="PHP" value="962" />
+          <entry key="PHP" value="1493" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="SmartyConfig" value="114" />
-          <entry key="Twig" value="626" />
+          <entry key="Twig" value="1119" />
           <entry key="YAML" value="47" />
         </counts>
       </usages-collector>
@@ -60,11 +62,12 @@
           <entry key="dist" value="1" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
+          <entry key="json" value="1" />
           <entry key="md" value="1" />
           <entry key="php" value="3" />
           <entry key="prod" value="2" />
           <entry key="sh" value="1" />
-          <entry key="twig" value="1" />
+          <entry key="twig" value="2" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -73,11 +76,12 @@
           <entry key="Bash" value="1" />
           <entry key="CSS" value="1" />
           <entry key="Dockerfile" value="1" />
+          <entry key="JSON" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="3" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SmartyConfig" value="4" />
-          <entry key="Twig" value="1" />
+          <entry key="Twig" value="2" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -105,11 +109,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="-2480">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="45" />
               <folding>
                 <element signature="e#1215#1231#1#PHP" expanded="true" />
+                <element signature="e#1828#1842#1#PHP" expanded="true" />
+                <element signature="e#1833#1847#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pre.html.twig">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -117,8 +137,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+            <state relative-caret-position="952">
+              <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#li#4;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#9;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#9;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,15 +185,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/docker/prod/nginx.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command/JoomlaCommand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="818">
@@ -185,9 +201,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mysql</find>
-      <find>entrypoint</find>
       <find>file_put_contents</find>
+      <find>Strict-Transport-Security</find>
+      <find>entrypoint</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -206,6 +226,7 @@
         <option value="$PROJECT_DIR$/config/docker/prod/.env.dist" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/templates/home.html.twig" />
       </list>
@@ -303,13 +324,27 @@
             <path>
               <item name="corefilesapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="corefilesapi" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="corefilesapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="corefilesapi" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="corefilesapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="corefilesapi" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="corefilesapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="corefilesapi" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="prod" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="corefilesapi" type="b2602c69:ProjectViewProjectNode" />
@@ -509,20 +544,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pre.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="-2480">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="45" />
           <folding>
             <element signature="e#1215#1231#1#PHP" expanded="true" />
+            <element signature="e#1828#1842#1#PHP" expanded="true" />
+            <element signature="e#1833#1847#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+        <state relative-caret-position="952">
+          <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#li#4;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#9;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#9;n#ul#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
